@@ -25,9 +25,11 @@ license {
 }
 
 rust_defaults {
-    name: "downcast-rs_defaults",
+    name: "downcast-rs_test_defaults",
     crate_name: "downcast_rs",
     srcs: ["src/lib.rs"],
+    cargo_env_compat: true,
+    cargo_pkg_version: "1.2.0",
     test_suites: ["general-tests"],
     auto_gen_config: true,
     edition: "2015",
@@ -39,7 +41,7 @@ rust_defaults {
 
 rust_test_host {
     name: "downcast-rs_host_test_src_lib",
-    defaults: ["downcast-rs_defaults"],
+    defaults: ["downcast-rs_test_defaults"],
     test_options: {
         unit_test: true,
     },
@@ -47,12 +49,14 @@ rust_test_host {
 
 rust_test {
     name: "downcast-rs_device_test_src_lib",
-    defaults: ["downcast-rs_defaults"],
+    defaults: ["downcast-rs_test_defaults"],
 }
 
 rust_defaults {
-    name: "downcast-rs_defaults_downcast_rs",
+    name: "downcast-rs_test_defaults_downcast_rs",
     crate_name: "downcast_rs",
+    cargo_env_compat: true,
+    cargo_pkg_version: "1.2.0",
     test_suites: ["general-tests"],
     auto_gen_config: true,
     edition: "2015",
@@ -67,7 +71,7 @@ rust_defaults {
 
 rust_test_host {
     name: "downcast-rs_host_test_tests_import_via_macro_use",
-    defaults: ["downcast-rs_defaults_downcast_rs"],
+    defaults: ["downcast-rs_test_defaults_downcast_rs"],
     srcs: ["tests/import_via_macro_use.rs"],
     test_options: {
         unit_test: true,
@@ -76,13 +80,13 @@ rust_test_host {
 
 rust_test {
     name: "downcast-rs_device_test_tests_import_via_macro_use",
-    defaults: ["downcast-rs_defaults_downcast_rs"],
+    defaults: ["downcast-rs_test_defaults_downcast_rs"],
     srcs: ["tests/import_via_macro_use.rs"],
 }
 
 rust_test_host {
     name: "downcast-rs_host_test_tests_use_via_namespace",
-    defaults: ["downcast-rs_defaults_downcast_rs"],
+    defaults: ["downcast-rs_test_defaults_downcast_rs"],
     srcs: ["tests/use_via_namespace.rs"],
     test_options: {
         unit_test: true,
@@ -91,7 +95,7 @@ rust_test_host {
 
 rust_test {
     name: "downcast-rs_device_test_tests_use_via_namespace",
-    defaults: ["downcast-rs_defaults_downcast_rs"],
+    defaults: ["downcast-rs_test_defaults_downcast_rs"],
     srcs: ["tests/use_via_namespace.rs"],
 }
 
@@ -99,6 +103,8 @@ rust_library {
     name: "libdowncast_rs",
     host_supported: true,
     crate_name: "downcast_rs",
+    cargo_env_compat: true,
+    cargo_pkg_version: "1.2.0",
     srcs: ["src/lib.rs"],
     edition: "2015",
     features: [
@@ -107,6 +113,7 @@ rust_library {
     ],
     apex_available: [
         "//apex_available:platform",
+        "com.android.compos",
         "com.android.virt",
     ],
 }
