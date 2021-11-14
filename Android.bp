@@ -102,6 +102,7 @@ rust_test {
 rust_library {
     name: "libdowncast_rs",
     host_supported: true,
+    vendor_available: true,
     crate_name: "downcast_rs",
     cargo_env_compat: true,
     cargo_pkg_version: "1.2.0",
@@ -114,6 +115,8 @@ rust_library {
     apex_available: [
         "//apex_available:platform",
         "com.android.compos",
+        "com.android.uwb",
         "com.android.virt",
     ],
+    min_sdk_version: "29",
 }
