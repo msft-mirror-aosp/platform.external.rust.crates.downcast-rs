@@ -2,6 +2,12 @@
 {
   "presubmit": [
     {
+      "name": "VtsAidlDiceDemoteTargetTest"
+    },
+    {
+      "name": "VtsAidlDiceTargetTest"
+    },
+    {
       "name": "authfs_device_test_src_lib"
     },
     {
@@ -29,10 +35,19 @@
       "name": "downcast-rs_test_tests_use_via_namespace"
     },
     {
+      "name": "keystore2_client_tests"
+    },
+    {
       "name": "keystore2_km_compat_test"
     },
     {
+      "name": "keystore2_legacy_blobs_test"
+    },
+    {
       "name": "keystore2_test"
+    },
+    {
+      "name": "keystore2_test_utils_test"
     },
     {
       "name": "legacykeystore_test"
@@ -55,6 +70,12 @@
   ],
   "presubmit-rust": [
     {
+      "name": "VtsAidlDiceDemoteTargetTest"
+    },
+    {
+      "name": "VtsAidlDiceTargetTest"
+    },
+    {
       "name": "authfs_device_test_src_lib"
     },
     {
@@ -82,10 +103,19 @@
       "name": "downcast-rs_test_tests_use_via_namespace"
     },
     {
+      "name": "keystore2_client_tests"
+    },
+    {
       "name": "keystore2_km_compat_test"
     },
     {
+      "name": "keystore2_legacy_blobs_test"
+    },
+    {
       "name": "keystore2_test"
+    },
+    {
+      "name": "keystore2_test_utils_test"
     },
     {
       "name": "legacykeystore_test"
